@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TodoController;
+use App\Http\Controllers\TaxController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,5 +19,8 @@ Route::get('/', function () {
 });
 
 Route::get('/todos',[TodoController::class,'index']);
+
+Route::get('/tax', [TaxController::class, 'index'])->name('tax.index');
+Route::post('/validation', [TaxController::class, 'check'])->name('tax.check');
 
 
